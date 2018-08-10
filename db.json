@@ -2,23 +2,19 @@
   "posts": [
     {
       "id": 1,
-      "name": "mike"
+      "name": "mike1"
     },
     {
-      "name": "ddfgdfgdf",
-      "id": 2
+      "id": 2,
+      "name": "mike2"
     },
     {
-      "name": "mi",
-      "id": 3
+      "id": 3,
+      "name": "mike3"
     },
     {
-      "name": "mike2",
-      "id": 4
-    },
-    {
-      "name": "mike3",
-      "id": 5
+      "id": 4,
+      "name": "mike4"
     }
   ]
 }
