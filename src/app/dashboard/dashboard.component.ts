@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Observable } from 'rxjs';
-import { map, tap, pluck } from 'rxjs/operators';
+import { map, tap, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -33,7 +33,11 @@ export class DashboardComponent implements OnInit {
     this.he$ = this.heroService
     .getHeroes2()
     .pipe(
-      map(tuna => tuna.splice(0,4))
+      map(tuna => tuna.splice(0,4)),
+      tap(
+        (tuna) => {
+          console.log(tuna);
+      })
     );
   }
 }
