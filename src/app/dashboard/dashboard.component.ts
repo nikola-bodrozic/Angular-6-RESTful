@@ -33,11 +33,20 @@ export class DashboardComponent implements OnInit {
     this.he$ = this.heroService
     .getHeroes2()
     .pipe(
+      map(tuna => tuna.filter(tuna => tuna.name !== "mike1")),
+      map(tuna => this.transformHero(tuna)),
       map(tuna => tuna.splice(0,4)),
       tap(
         (tuna) => {
           console.log(tuna);
       })
     );
+  }
+
+  transformHero(params: Hero[]){
+    for (let entry of params) {
+      entry.name = entry.name + ' was in tr';
+    }
+    return params;
   }
 }
